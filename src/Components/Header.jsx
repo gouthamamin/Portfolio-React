@@ -31,7 +31,7 @@ function Header() {
 
   return (
     <div className="header">
-      <AppBar position="static">
+      <AppBar position="static" sx={{ bgcolor: "#38596b" }}>
         <Toolbar>
           <IconButton
             size="large"
