@@ -72,7 +72,8 @@ function IntroductionProfile() {
         Welcome
       </Typography>
       <Typography variant="h3" sx={{ textAlign: "center" }} gutterBottom>
-        I'm <span style={{ color: "red" }}>Goutham</span> Amin
+        I'm <span style={{ color: "red", fontWeight: "bold" }}>Goutham</span>{" "}
+        Amin
       </Typography>
 
       <ResponsiveButton>More About Me</ResponsiveButton>
