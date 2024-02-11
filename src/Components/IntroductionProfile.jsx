@@ -1,4 +1,49 @@
 import { Button, Typography } from "@mui/material";
+import { styled } from "@mui/system";
+
+const ResponsiveButton = styled(Button)(({ theme }) => ({
+  backgroundColor: "#1c87c9",
+  borderRadius: "60px",
+  border: "none",
+  color: "white",
+  cursor: "pointer",
+  display: "inline-block",
+  fontFamily: "sans-serif",
+  fontSize: "20px",
+  fontWeight: "bold",
+  padding: "5px 15px",
+  textAlign: "center",
+  textDecoration: "none",
+  animation: "glowing 1300ms infinite",
+
+  "@keyframes glowing": {
+    "0%": {
+      backgroundColor: "#ccffff",
+      boxShadow: "0 0 5px #ccffff",
+    },
+    "50%": {
+      backgroundColor: "#00ffff",
+      boxShadow: "0 0 20px #00ffff",
+    },
+    "100%": {
+      backgroundColor: "#ccffff",
+      boxShadow: "0 0 5px #ccffff",
+    },
+  },
+
+  [theme.breakpoints.down("xs")]: {
+    fontSize: "14px",
+  },
+  [theme.breakpoints.up("sm")]: {
+    fontSize: "16px",
+  },
+  [theme.breakpoints.up("md")]: {
+    fontSize: "18px",
+  },
+  [theme.breakpoints.up("lg")]: {
+    fontSize: "20px",
+  },
+}));
 
 function IntroductionProfile() {
   const introProfileStyles = {
@@ -29,40 +74,7 @@ function IntroductionProfile() {
         I'm <span style={{ color: "red" }}>Goutham</span> Amin
       </Typography>
 
-      <Button
-        sx={{
-          backgroundColor: "#1c87c9",
-          borderRadius: "60px",
-          border: "none",
-          color: "white",
-          cursor: "pointer",
-          display: "inline-block",
-          fontFamily: "sans-serif",
-          fontSize: "20px",
-          fontWeight: "bold",
-          padding: "5px 15px",
-          textAlign: "center",
-          textDecoration: "none",
-          animation: "glowing 1300ms infinite",
-          //   bluish glow
-          "@keyframes glowing": {
-            "0%": {
-              backgroundColor: "#ccffff", // Blue color for glow start
-              boxShadow: "0 0 5px #ccffff",
-            },
-            "50%": {
-              backgroundColor: "#00ffff", // Blue color for glow midpoint
-              boxShadow: "0 0 20px #00ffff",
-            },
-            "100%": {
-              backgroundColor: "#ccffff", // Blue color for glow end
-              boxShadow: "0 0 5px #ccffff",
-            },
-          },
-        }}
-      >
-        More About Me
-      </Button>
+      <ResponsiveButton>More About Me</ResponsiveButton>
     </div>
   );
 }
