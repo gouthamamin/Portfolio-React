@@ -1,3 +1,4 @@
+import AboutMe from "./Components/AboutMe";
 import Header from "./Components/Header";
 import IntroductionProfile from "./Components/IntroductionProfile";
 
@@ -6,6 +7,7 @@ function App() {
     <div className="App">
       <Header/>
       <IntroductionProfile/>
+      <AboutMe/>
     </div>
   );
 }

@@ -75,7 +75,7 @@ function IntroductionProfile() {
         I'm <span style={{ color: "red", fontWeight: "bold" }}>Goutham</span>{" "}
         Amin
       </Typography>
-
+      <Typography>Frontend & Game Developer</Typography>
       <ResponsiveButton>More About Me</ResponsiveButton>
     </div>
   );
