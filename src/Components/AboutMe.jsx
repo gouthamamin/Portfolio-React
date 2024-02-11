@@ -1,10 +1,8 @@
-import { Avatar, Button, Typography, Box } from "@mui/material";
+import { Avatar, Button, Typography, Box, Stack } from "@mui/material";
 
 function AboutMe() {
   const aboutMeStyles = {
-    display: "flex",
     gap: "2rem",
-    padding: "1rem",
   };
   const titleStyles = {
     fontWeight: "1rem",
@@ -15,7 +13,22 @@ function AboutMe() {
   return (
     <div>
       <Typography style={titleStyles}>About Me</Typography>
-      <div className="AboutMe" style={aboutMeStyles}>
+      <Stack
+        className="AboutMe"
+        style={aboutMeStyles}
+        direction={{
+          xs: "column", //>0
+          sm: "Column", //>600
+          md: "column", //>900
+          lg: "row", //>1200
+          xl: "row", //>1536
+        }}
+        padding={{
+          xs: "2rem",
+          lg: "5rem",
+        }}
+        alignItems="center"
+      >
         <Box>
           <Avatar
             alt="Profile-Image"
@@ -39,7 +52,7 @@ function AboutMe() {
           </Typography>
           <Button>Download Resume</Button>
         </Box>
-      </div>
+      </Stack>
     </div>
   );
 }
