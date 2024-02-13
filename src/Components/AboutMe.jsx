@@ -11,10 +11,9 @@ function AboutMe() {
     fontFamily: `'Bungee Spice', 'cursive'`,
   };
   return (
-    <div>
+    <div className="AboutMe" style={{ backgroundColor: "#ededed" }}>
       <Typography style={titleStyles}>About Me</Typography>
       <Stack
-        className="AboutMe"
         style={aboutMeStyles}
         direction={{
           xs: "column", //>0

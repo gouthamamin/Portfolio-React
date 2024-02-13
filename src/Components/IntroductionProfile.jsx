@@ -49,7 +49,6 @@ function IntroductionProfile() {
   const introProfileStyles = {
     textAlign: "center",
     padding: "20px",
-    marginBottom: "20px",
     minHeight: "600px",
     backgroundColor: "#6cdff02e",
     background: `linear-gradient(180deg, rgb(255, 255, 255), rgb(205, 237, 254))`,
