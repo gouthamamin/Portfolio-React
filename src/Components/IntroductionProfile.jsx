@@ -13,6 +13,7 @@ function IntroductionProfile() {
     flexWrap: "wrap",
     justifyContent: "center",
     alignItems: "center",
+    marginTop: "64px",
   };
 
   const typewriterContainerStyles = {
