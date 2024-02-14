@@ -1,49 +1,5 @@
-import { Button, Typography } from "@mui/material";
-import { styled } from "@mui/system";
-
-const ResponsiveButton = styled(Button)(({ theme }) => ({
-  backgroundColor: "#1c87c9",
-  borderRadius: "60px",
-  border: "none",
-  color: "white",
-  cursor: "pointer",
-  display: "inline-block",
-  fontFamily: "sans-serif",
-  fontSize: "20px",
-  fontWeight: "bold",
-  padding: "5px 15px",
-  textAlign: "center",
-  textDecoration: "none",
-  animation: "glowing 1300ms infinite",
-
-  "@keyframes glowing": {
-    "0%": {
-      backgroundColor: "#ccffff",
-      boxShadow: "0 0 5px #ccffff",
-    },
-    "50%": {
-      backgroundColor: "#00ffff",
-      boxShadow: "0 0 20px #00ffff",
-    },
-    "100%": {
-      backgroundColor: "#ccffff",
-      boxShadow: "0 0 5px #ccffff",
-    },
-  },
-
-  [theme.breakpoints.down("xs")]: {
-    fontSize: "14px",
-  },
-  [theme.breakpoints.up("sm")]: {
-    fontSize: "16px",
-  },
-  [theme.breakpoints.up("md")]: {
-    fontSize: "18px",
-  },
-  [theme.breakpoints.up("lg")]: {
-    fontSize: "20px",
-  },
-}));
+import { Typography } from "@mui/material";
+import { useTypewriter, Cursor } from "react-simple-typewriter";
 
 function IntroductionProfile() {
   const introProfileStyles = {
@@ -58,43 +14,93 @@ function IntroductionProfile() {
     justifyContent: "center",
     alignItems: "center",
   };
+
+  const typewriterContainerStyles = {
+    display: "flex",
+    alignItems: "center",
+    height: "2rem",
+  };
+
+  const typewriterTextStyles = {
+    fontWeight: "bold",
+    color: "green",
+    fontSize: "1.5rem",
+  };
+
+  const waveStyle = {
+    fontSize: "3rem",
+    animationName: "wave-animation",
+    animationDuration: "2.1s",
+    animationIterationCount: "infinite",
+    transformOrigin: "70% 70%",
+    display: "inline-block",
+  };
+
+  const keyframesStyle = `
+    @keyframes wave-animation {
+      0% {
+        transform: rotate(0deg);
+      }
+      10% {
+        transform: rotate(14deg);
+      }
+      20% {
+        transform: rotate(-8deg);
+      }
+      30% {
+        transform: rotate(14deg);
+      }
+      40% {
+        transform: rotate(-4deg);
+      }
+      50% {
+        transform: rotate(10deg);
+      }
+      60% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+  `;
+
+  const [text] = useTypewriter({
+    words: ["Frontend Developer", "Web Game Developer"],
+    loop: {},
+  });
+
   return (
     <div style={introProfileStyles} className="intro-profile">
-      <Typography
-        variant="h5"
-        style={{
-          marginBottom: "10px",
-          fontWeight: "bold",
-          fontSize: "1.25rem",
-        }}
-      >
-        Welcome
-      </Typography>
-      <Typography variant="h3" sx={{ textAlign: "center" }} gutterBottom>
-        I'm <span style={{ color: "red", fontWeight: "bold" }}>Goutham</span>{" "}
-        Amin
-      </Typography>
-      <Typography mb="1rem">Frontend & Game Developer</Typography>
-      <ResponsiveButton>More About Me</ResponsiveButton>
+      <style>{keyframesStyle}</style>
+      <div style={{ textAlign: "left" }}>
+        <Typography
+          variant="h5"
+          style={{
+            marginBottom: "10px",
+            fontWeight: "bold",
+            fontSize: "2rem",
+          }}
+        >
+          Hey There!{" "}
+          <span style={waveStyle} role="img" aria-labelledby="wave">
+            👋🏻
+          </span>
+        </Typography>
+        <Typography variant="h3" gutterBottom>
+          I'm <span style={{ color: "red", fontWeight: "bold" }}>Goutham</span>{" "}
+          Amin
+        </Typography>
+
+        <div style={typewriterContainerStyles}>
+          <span style={typewriterTextStyles}>{text}</span>
+          <span style={{ color: "red" }}>
+            <Cursor />
+          </span>
+        </div>
+      </div>
     </div>
   );
 }
 
 export default IntroductionProfile;
-
-//-------------------Greenish glow effects-------------------
-
-//   "@keyframes glowing": {
-//     "0%": {
-//       backgroundColor: "#2ba805",
-//       boxShadow: "0 0 5px #2ba805",
-//     },
-//     "50%": {
-//       backgroundColor: "#49e819",
-//       boxShadow: "0 0 20px #49e819",
-//     },
-//     "100%": {
-//       backgroundColor: "#2ba805",
-//       boxShadow: "0 0 5px #2ba805",
-//     },
-//   },
