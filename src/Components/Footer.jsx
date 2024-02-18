@@ -14,6 +14,10 @@ const footerStyle = {
   padding: "4rem",
 };
 
+const iconButtonStyles = {
+  backgroundColor: "white",
+};
+
 const Footer = () => {
   return (
     <footer style={footerStyle}>
@@ -25,7 +29,7 @@ const Footer = () => {
         margin="0 auto"
       >
         {/* Amin's Portfolio Section */}
-        <Grid item xs={12} sm={6} style={{ textAlign: "left" }}>
+        <Grid item xs={12} md={9} style={{ textAlign: "left" }}>
           <h1 style={{ margin: 0 }}>Amin's Portfolio</h1>
           <p>
             Thank you for visiting my personal portfolio website. Connect with
@@ -35,30 +39,38 @@ const Footer = () => {
         </Grid>
 
         {/* Contact Info Section */}
-        <Grid item xs={12} sm={6} style={{ textAlign: "left" }}>
+        <Grid item xs={12} md={3} style={{ textAlign: "left" }}>
           <h1 style={{ margin: 0 }}>Contact Info</h1>
           <p>+91 XXX-XXX-XXXX</p>
           <p>gouthamamin@gmail.com</p>
           <p>Mangalore, Karnataka-575006</p>
 
-          <div style={{ display: "flex" }}>
-            <IconButton aria-label="delete">
-              <LinkedInIcon />
+          <div style={{ display: "flex", gap: "0.5rem" }}>
+            <IconButton aria-label="linkedin" style={iconButtonStyles}>
+              <LinkedInIcon
+                sx={{ color: "#0a66c2", "&:hover": { color: "grey" } }}
+              />
             </IconButton>
-            <IconButton aria-label="delete">
-              <GitHubIcon />
+            <IconButton aria-label="github" style={iconButtonStyles}>
+              <GitHubIcon
+                sx={{ color: "black", "&:hover": { color: "grey" } }}
+              />
             </IconButton>
-            <IconButton aria-label="delete">
-              <EmailIcon />
+            <IconButton aria-label="email" style={iconButtonStyles}>
+              <EmailIcon sx={{ color: "red", "&:hover": { color: "grey" } }} />
             </IconButton>
-            <IconButton aria-label="delete">
-              <InstagramIcon />
+            <IconButton aria-label="instagram" style={iconButtonStyles}>
+              <InstagramIcon
+                sx={{ color: "#dd01a1", "&:hover": { color: "grey" } }}
+              />
             </IconButton>
-            <IconButton aria-label="delete">
-              <XIcon />
+            <IconButton aria-label="twitter" style={iconButtonStyles}>
+              <XIcon sx={{ color: "black", "&:hover": { color: "grey" } }} />
             </IconButton>
-            <IconButton aria-label="delete">
-              <TelegramIcon />
+            <IconButton aria-label="telegram" style={iconButtonStyles}>
+              <TelegramIcon
+                sx={{ color: "#00a9e6", "&:hover": { color: "grey" } }}
+              />
             </IconButton>
           </div>
         </Grid>
