@@ -59,9 +59,9 @@ function ContactMe() {
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.9237884563768!2d74.82121758162974!3d12.912619719817599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba3507e38a35215%3A0xe4a4a92f140f60e6!2sNaga%20Brahma%20Sannidi!5e0!3m2!1sen!2sin!4v1708183443404!5m2!1sen!2sin"
               width="100%"
               height="450"
-              allowfullscreen=""
+              allowFullScreen=""
               loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
+              referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
         </Grid>
