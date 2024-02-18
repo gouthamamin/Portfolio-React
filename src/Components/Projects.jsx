@@ -4,30 +4,45 @@ import {
   Card,
   CardContent,
   CardMedia,
-  Container,
-  Paper,
   Button,
   IconButton,
   useTheme,
   useMediaQuery,
 } from "@mui/material";
-import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
+import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
 import projects from "../Config/projectsConfig";
+import { Box } from "@mui/system";
 
-const someStyles = {
+const Styles = {
   root: {
     display: "flex",
+    justifyContent: "center",
     overflowX: "hidden", // Remove auto to hide the scrollbar
-    padding: "16px",
+    padding: "2rem",
     position: "relative",
   },
+  title: {
+    fontWeight: "1rem",
+    textAlign: "center",
+    fontSize: "36px",
+    fontFamily: `'Bungee Spice', 'cursive'`,
+    padding: "1rem",
+  },
+  cardContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "center",
+    margin: "0 auto", // Center the cards
+  },
   card: {
-    minWidth: "250px",
-    marginRight: "16px",
+    flex: `0 1 calc(25% - 16px)`, // Adjust the width based on the number of cards per row
+    margin: "0 8px 16px", // Add margin between cards
+    minWidth: "250px", // Set a minimum width for the cards
   },
   media: {
-    height: "140px",
+    height: "180px",
+    objectFit: "cover", // Ensure images don't stretch
   },
   arrowButton: {
     position: "absolute",
@@ -53,7 +68,7 @@ function Projects() {
   } else if (tabletScreen) {
     projectsPerPage = 3;
   } else if (largeScreen) {
-    projectsPerPage = 4; // You can adjust this value based on your requirements
+    projectsPerPage = 4;
   }
 
   const [currentPage, setCurrentPage] = useState(0);
@@ -72,49 +87,50 @@ function Projects() {
     currentPage * projectsPerPage,
     (currentPage + 1) * projectsPerPage
   );
-
   return (
-    <Container>
-      <Typography variant="h4" gutterBottom>
-        Project Details Carousel
+    <div className="Projects">
+      <Typography variant="h4" gutterBottom style={Styles.title}>
+        Projects
       </Typography>
-      <Paper style={someStyles.root} elevation={3}>
-        {visibleProjects.map((project, index) => (
-          <Card key={index} style={someStyles.card}>
-            <CardMedia
-              style={someStyles.media}
-              image={project.imageUrl}
-              title={project.title}
-            />
-            <CardContent>
-              <Typography variant="h6">{project.title}</Typography>
-              <Typography variant="body2" color="textSecondary">
-                {project.description}
-              </Typography>
-              <Button variant="contained" color="primary">
-                View Details
-              </Button>
-            </CardContent>
-          </Card>
-        ))}
+      <Box style={Styles.root}>
+        <div style={Styles.cardContainer}>
+          {visibleProjects.map((project, index) => (
+            <Card key={index} style={Styles.card}>
+              <CardMedia
+                style={Styles.media}
+                image={project.imageUrl}
+                title={project.title}
+              />
+              <CardContent>
+                <Typography variant="h6">{project.title}</Typography>
+                <Typography variant="body2" color="textSecondary">
+                  {project.description}
+                </Typography>
+                <Button variant="contained" color="primary">
+                  View Details
+                </Button>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
         {totalPages > 1 && (
           <>
             <IconButton
-              style={{ ...someStyles.arrowButton, left: 0 }}
+              style={{ ...Styles.arrowButton, left: 20 }}
               onClick={handlePrevPage}
             >
-              <ArrowBackIcon />
+              <KeyboardDoubleArrowLeftIcon fontSize="large" />
             </IconButton>
             <IconButton
-              style={{ ...someStyles.arrowButton, right: 0 }}
+              style={{ ...Styles.arrowButton, right: 20 }}
               onClick={handleNextPage}
             >
-              <ArrowForwardIcon />
+              <KeyboardDoubleArrowRightIcon fontSize="large" />
             </IconButton>
           </>
         )}
-      </Paper>
-    </Container>
+      </Box>
+    </div>
   );
 }
 
