@@ -115,18 +115,22 @@ function Projects() {
         </div>
         {totalPages > 1 && (
           <>
-            <IconButton
-              style={{ ...Styles.arrowButton, left: 20 }}
-              onClick={handlePrevPage}
-            >
-              <KeyboardDoubleArrowLeftIcon fontSize="large" />
-            </IconButton>
-            <IconButton
-              style={{ ...Styles.arrowButton, right: 20 }}
-              onClick={handleNextPage}
-            >
-              <KeyboardDoubleArrowRightIcon fontSize="large" />
-            </IconButton>
+            {currentPage !== 0 && (
+              <IconButton
+                style={{ ...Styles.arrowButton, left: 20 }}
+                onClick={handlePrevPage}
+              >
+                <KeyboardDoubleArrowLeftIcon fontSize="large" />
+              </IconButton>
+            )}
+            {currentPage !== totalPages - 1 && (
+              <IconButton
+                style={{ ...Styles.arrowButton, right: 20 }}
+                onClick={handleNextPage}
+              >
+                <KeyboardDoubleArrowRightIcon fontSize="large" />
+              </IconButton>
+            )}
           </>
         )}
       </Box>
