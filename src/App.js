@@ -1,4 +1,4 @@
-import AboutMe from "./Components/AboutMe";
+// import AboutMe from "./Components/AboutMe";
 import ContactMe from "./Components/ContactMe";
 import Education from "./Components/Education";
 import Experience from "./Components/Experience";
@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <Header />
       <IntroductionProfile />
-      <AboutMe />
+      {/* <AboutMe /> */}
       <Education />
       <Skills />
       <Experience />

@@ -1,4 +1,4 @@
-import { Typography } from "@mui/material";
+import { Avatar, Grid, Typography } from "@mui/material";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 
 function IntroductionProfile() {
@@ -73,33 +73,76 @@ function IntroductionProfile() {
 
   return (
     <div style={introProfileStyles} className="intro-profile">
-      <style>{keyframesStyle}</style>
-      <div style={{ textAlign: "left" }}>
-        <Typography
-          variant="h5"
+      <Grid container spacing={4}>
+        <Grid
+          item
+          xs={12}
+          md={8}
           style={{
-            marginBottom: "10px",
-            fontWeight: "bold",
-            fontSize: "2rem",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexDirection: "column",
           }}
         >
-          Hey There!{" "}
-          <span style={waveStyle} role="img" aria-labelledby="wave">
-            👋🏻
-          </span>
-        </Typography>
-        <Typography variant="h3" gutterBottom>
-          I'm <span style={{ color: "red", fontWeight: "bold" }}>Goutham</span>{" "}
-          Amin
-        </Typography>
+          <style>{keyframesStyle}</style>
+          <div style={{ textAlign: "center", marginBottom: "20px" }}>
+            <Typography
+              variant="h5"
+              style={{
+                marginBottom: "10px",
+                fontWeight: "bold",
+                fontSize: { xs: "1rem", md: "2rem" },
+              }}
+            >
+              Hey There!{" "}
+              <span style={waveStyle} role="img" aria-labelledby="wave">
+                👋🏻
+              </span>
+            </Typography>
+            <Typography
+              variant="h3"
+              gutterBottom
+              sx={{
+                fontFamily: `Pacifico, cursive`,
+                fontSize: { xs: "2rem", md: "3rem" },
+              }}
+            >
+              I'm{" "}
+              <span style={{ color: "red", fontWeight: "bold" }}>Goutham</span>{" "}
+              Amin
+            </Typography>
+          </div>
 
-        <div style={typewriterContainerStyles}>
-          <span style={typewriterTextStyles}>{text}</span>
-          <span style={{ color: "red" }}>
-            <Cursor />
-          </span>
-        </div>
-      </div>
+          <div style={typewriterContainerStyles}>
+            <span style={typewriterTextStyles}>{text}</span>
+            <span style={{ color: "red" }}>
+              <Cursor />
+            </span>
+          </div>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          md={4}
+          sx={{ textAlign: "center" }}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexDirection: "column",
+          }}
+        >
+          <Avatar
+            src="/Assets/Profile-Photo.jpg"
+            alt="Profile Image"
+            sx={{
+              height: { xs: "150px", md: "300px" },
+              width: { xs: "150px", md: "300px" },
+            }}
+          />
+        </Grid>
+      </Grid>
     </div>
   );
 }
